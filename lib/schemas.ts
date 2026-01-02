@@ -1,8 +1,8 @@
-import { z } from "zod"
+import { z } from "zod";
 
 // Tech stack identifier
-export const TechIdSchema = z.string()
-export type TechId = z.infer<typeof TechIdSchema>
+export const TechIdSchema = z.string();
+export type TechId = z.infer<typeof TechIdSchema>;
 
 // Project schema
 export const ProjectSchema = z.object({
@@ -17,7 +17,7 @@ export const ProjectSchema = z.object({
       src: z.string(),
       type: z.enum(["image", "video"]).optional(),
       alt: z.string().optional(),
-    }),
+    })
   ),
   links: z
     .object({
@@ -36,15 +36,23 @@ export const ProjectSchema = z.object({
       results: z.array(z.string()).optional(),
     })
     .optional(),
-})
+});
 
-export type Project = z.infer<typeof ProjectSchema>
+export type Project = z.infer<typeof ProjectSchema>;
 
 // Milestone schema
 export const MilestoneSchema = z.object({
   title: z.string(),
   date: z.string(),
-  kind: z.enum(["cert", "award", "oss", "education", "blog", "youtube", "other"]),
+  kind: z.enum([
+    "cert",
+    "award",
+    "oss",
+    "education",
+    "blog",
+    "youtube",
+    "other",
+  ]),
   proofUrl: z.string().optional(),
   img: z.string().optional(),
   note: z.string().optional(),
@@ -52,9 +60,9 @@ export const MilestoneSchema = z.object({
   content: z.string().optional(), // For blog content
   videoId: z.string().optional(), // For YouTube videos
   keyAchievements: z.array(z.string()).optional(),
-})
+});
 
-export type Milestone = z.infer<typeof MilestoneSchema>
+export type Milestone = z.infer<typeof MilestoneSchema>;
 
 // Experience schema
 export const ExperienceSchema = z.object({
@@ -69,9 +77,9 @@ export const ExperienceSchema = z.object({
   img: z.string().optional(),
   keyAchievements: z.array(z.string()).optional(),
   technologies: z.array(z.string()).optional(),
-})
+});
 
-export type Experience = z.infer<typeof ExperienceSchema>
+export type Experience = z.infer<typeof ExperienceSchema>;
 
 // Profile schema
 export const ProfileSchema = z.object({
@@ -87,37 +95,15 @@ export const ProfileSchema = z.object({
       platform: z.string(),
       url: z.string(),
       icon: z.string(),
-    }),
-  ),
-  summaryCards: z.array(
-    z.object({
-      label: z.string(),
-      value: z.string(),
-      icon: z.string(),
-    }),
+    })
   ),
   techStack: z.array(
     z.object({
       name: z.string(),
       category: z.string(),
       icon: z.string(),
-    }),
+    })
   ),
-})
+});
 
-export type Profile = z.infer<typeof ProfileSchema>
-
-// Site config schema
-export const SiteConfigSchema = z.object({
-  name: z.string(),
-  description: z.string(),
-  url: z.string(),
-  ogImage: z.string(),
-  author: z.object({
-    name: z.string(),
-    email: z.string(),
-    twitter: z.string().optional(),
-  }),
-})
-
-export type SiteConfig = z.infer<typeof SiteConfigSchema>
+export type Profile = z.infer<typeof ProfileSchema>;

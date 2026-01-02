@@ -12,7 +12,7 @@ export const profile: Profile = {
   socials: [
     {
       platform: "GitHub",
-      url: "https://github.com/mo0hamed-shoaib",
+      url: "https://github.com/mohamed-g-shoaib",
       icon: "github",
     },
     {
@@ -29,28 +29,6 @@ export const profile: Profile = {
       platform: "Email",
       url: "mailto:mohamed.g.shoaib@gmail.com",
       icon: "mail",
-    },
-  ],
-  summaryCards: [
-    {
-      label: "Years Experience",
-      value: "1+",
-      icon: "calendar",
-    },
-    {
-      label: "Projects Completed",
-      value: "10+",
-      icon: "code",
-    },
-    {
-      label: "GitHub Commits",
-      value: "700+",
-      icon: "git-commit",
-    },
-    {
-      label: "Coffee Consumed",
-      value: "∞",
-      icon: "coffee",
     },
   ],
   techStack: [
