@@ -16,7 +16,6 @@ import { Icons, type IconName } from "@/components/icons";
 import { profile } from "@/data/profile";
 import { MapPin, FileText, Mail } from "lucide-react";
 import { ContactFormModal } from "@/components/contact-form-modal";
-import { GitHubStats } from "@/components/github-stats";
 
 interface ProfileInfoModalProps {
   children?: React.ReactNode;
@@ -50,9 +49,6 @@ export function ProfileInfoModal({ children }: ProfileInfoModalProps) {
               <span>{profile.location}</span>
             </div>
           </div>
-
-          {/* GitHub Stats */}
-          <GitHubStats />
 
           {/* Social Links */}
           <div>

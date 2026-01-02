@@ -14,7 +14,6 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { GitHubStats } from "@/components/github-stats";
 
 export function SidebarPersonalCard() {
   const MapPinIcon = Icons["map-pin"];
@@ -62,9 +61,6 @@ export function SidebarPersonalCard() {
           {profile.bio}
         </p>
       </div>
-
-      {/* GitHub Stats */}
-      <GitHubStats />
 
       {/* Social Links */}
       <div className="flex justify-center gap-1.5 2xl:gap-3 3xl:gap-4">
