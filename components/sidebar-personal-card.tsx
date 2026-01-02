@@ -1,14 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { toast } from "sonner";
-import { ContactFormModal } from "@/components/contact-form-modal";
 import { Icons, type IconName } from "@/components/icons";
 import { profile } from "@/data/profile";
-import { Logo } from "@/components/logo";
 import {
   Tooltip,
   TooltipContent,
@@ -21,11 +18,6 @@ export function SidebarPersonalCard() {
 
   return (
     <div className="w-full max-w-sm xl:max-w-md 2xl:max-w-lg 3xl:max-w-xl space-y-2.5 2xl:space-y-3 3xl:space-y-4">
-      {/* Logo Header */}
-      <div className="flex items-center justify-center">
-        <Logo size="sm" className="2xl:w-14 2xl:h-14 3xl:w-16 3xl:h-16" />
-      </div>
-
       {/* Profile Header */}
       <div className="text-center space-y-1.5 2xl:space-y-2 3xl:space-y-3">
         <Avatar className="mx-auto w-16 h-16 2xl:w-24 2xl:h-24 3xl:w-28 3xl:h-28">
@@ -119,26 +111,17 @@ export function SidebarPersonalCard() {
         })}
       </div>
 
-      {/* Action Buttons */}
-      <div className="flex gap-1.5 2xl:gap-3 3xl:gap-4">
-        <Button
-          asChild
-          className="flex-1 bg-transparent h-8 2xl:h-10 3xl:h-11"
-          variant="outline"
-        >
-          <Link href={profile.cvUrl} target="_blank" rel="noopener noreferrer">
-            <FileTextIcon className="w-3 h-3 2xl:w-5 2xl:h-5 3xl:w-6 3xl:h-6 mr-1.5 2xl:mr-2" />
-            View CV
-          </Link>
-        </Button>
-
-        <ContactFormModal>
-          <Button className="flex-1 h-8 2xl:h-10 3xl:h-11">
-            <Icons.mail className="w-3 h-3 2xl:w-5 2xl:h-5 3xl:w-6 3xl:h-6 mr-1.5 2xl:mr-2" />
-            Hire Me
-          </Button>
-        </ContactFormModal>
-      </div>
+      {/* Action Button */}
+      <Button
+        asChild
+        className="w-full bg-transparent h-8 2xl:h-10 3xl:h-11"
+        variant="outline"
+      >
+        <Link href={profile.cvUrl} target="_blank" rel="noopener noreferrer">
+          <FileTextIcon className="w-3 h-3 2xl:w-5 2xl:h-5 3xl:w-6 3xl:h-6 mr-1.5 2xl:mr-2" />
+          View CV
+        </Link>
+      </Button>
     </div>
   );
 }
